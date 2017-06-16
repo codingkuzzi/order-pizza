@@ -21,13 +21,31 @@ Pizza.prototype.Cost = function(pizzaName, size, toppings) {
       this.cost += 8;
       break;
   }
-
   switch(this.pizzaSize) {
-
+    case "Small":
+      this.cost += 1;
+      break;
+    case "Medium":
+      this.cost += 3;
+      break;
+    case "Large":
+      this.cost += 5;
+      break;
   }
-  switch(this.pizzaSize) {
+  switch(this.toppings) {
+
 
   }
 
   return this.cost;
 };
+
+// user interface logic
+$(document).ready(function(){
+  $(".refresh").click(function() {
+    location.reload();
+  });
+
+  name = $("input#name").val();
+
+}
