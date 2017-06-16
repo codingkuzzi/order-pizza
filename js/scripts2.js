@@ -1,3 +1,19 @@
+$(document).ready(function() {
+  $("form#order").submit(function(event) {
+    event.preventDefault();
+
+    var selectedPizza = $(".pizzaName").val();
+    var selectedSize = $(".pizza-size").val();
+    var selectedToppings = $(".toppings").val();
+
+    var newPizza = new Pizza(selectedPizza, selectedSize, selectedToppings, 0)
+    var newCost = newPizza.Cost(selectedPizza, selectedSize)
+
+    //$(".toppings :checked").each(function() {
+    //  alert($(this).val());
+      //toppings.push($(this).val());
+});
+
 //business logic
 function Pizza(pizzaName, size, toppings, cost) {
   this.pizzaName = pizzaName;
@@ -6,7 +22,7 @@ function Pizza(pizzaName, size, toppings, cost) {
   this.cost = cost;
 }
 
-Pizza.prototype.Cost = function(pizzaName, size, toppings) {
+Pizza.prototype.Cost = function(pizzaName, size) {
   switch (this.pizzaName) {
     case "Pepperoni":
     case "Sausage":
@@ -32,29 +48,11 @@ Pizza.prototype.Cost = function(pizzaName, size, toppings) {
       this.cost += 5;
       break;
   }
-  switch (this.toppings) {
+  //switch (this.toppings) {
 
-
-  }
+  //}
 
   return this.cost;
 };
 
-// user interface logic
-$(document).ready(function() {
-    //$(".refresh").click(function() {
-    //location.reload();
-    //});
-    //$("button").click(function() {
-      //var name = $("input#name").val();
-      //var selectedPizza = $("input#pizzaName").val();
-      //alert (selectedPizza)
-
-      //$(".toppings :checked").each(function() {
-      //  alert($(this).val());
-        //toppings.push($(this).val());
-      });
-
-      //newPizza = new Pizza(pizzaName, size, toppings, cost)
-
-  });
+});

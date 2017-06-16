@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
   <link href="css/styles.css" rel="stylesheet" type="text/css" />
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts2.js"></script>
   <title>Order Pizza</title>
 </head>
 
@@ -52,17 +52,17 @@
         </div>
         </row>
     </ul>
-    </div>
+  </div>
     <div class="container">
-      <form class="input">
+      <form id="order">
         <h3> Select Your Pizza!</h3>
         <div class="row">
-          <div class="col-sm-3 toppings">
-            <input type="checkbox" value="pepperoni"> Pepperoni</input>
+          <div class="col-sm-3 pizzaName">
+            <input type="checkbox" value="pepperoni" checked> Pepperoni</input>
             <br>
-            <input type="checkbox" value="sausage"> Sausage</input>
+            <input type="checkbox" value="sausage" checked> Sausage</input>
             <br>
-            <input type="checkbox" value="spicy_italian"> Spicy Italian</input>
+            <input type="checkbox" value="spicy_italian" checked> Spicy Italian</input>
             <br>
             <input type="checkbox" value="miditerrian_veggie"> Miditerrian Veggie</input>
             <br>
@@ -71,7 +71,7 @@
             <input type="checkbox" value="spinach_alfredo"> Spinach Alfredo</input>
           </div>
           <h3>Select toppings </h3>
-          <div class="col-sm-3 toppings">
+          <div class="col-sm-3 "toppings">
             <input type="checkbox" value="bell-pepper"> Mushrooms </input>
             <br>
             <input type="checkbox" value="mushroom"> Onions </input>
@@ -86,7 +86,7 @@
           </div>
           </row>
           <div class="row">
-            <div class="col-sm-2 pizza-quantity">
+            <div class="col-sm-2 input" id="pizza-quantity">
               <label for="quantity"> How Many: </label>
               <br>
               <input type="number" id="quantity" min="1" max="25" value=1 required>
