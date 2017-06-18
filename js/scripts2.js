@@ -1,58 +1,102 @@
-$(document).ready(function() {
-  $("form#order").submit(function(event) {
-    event.preventDefault();
-
-    var selectedPizza = $(".pizzaName").val();
-    var selectedSize = $(".pizza-size").val();
-    var selectedToppings = $(".toppings").val();
-
-    var newPizza = new Pizza(selectedPizza, selectedSize, selectedToppings, 0)
-    var newCost = newPizza.Cost(selectedPizza, selectedSize)
-
-    //$(".toppings :checked").each(function() {
-    //  alert($(this).val());
-      //toppings.push($(this).val());
-});
-
 //business logic
-function Pizza(pizzaName, size, toppings, cost) {
+function Pizza(pizzaName, size, toppings) {
   this.pizzaName = pizzaName;
-  this.pizzaSize = size;
+  this.size = size;
   this.toppings = toppings;
-  this.cost = cost;
 }
 
-Pizza.prototype.Cost = function(pizzaName, size) {
+Pizza.prototype.Toppings = function() {
+  if(this.toppings.length === 0) {
+    return "no toppings";
+  } else {
+    return this.toppings.join(", ");
+  }
+}
+
+Pizza.prototype.Cost = function() {
+  var cost = 0;
   switch (this.pizzaName) {
-    case "Pepperoni":
-    case "Sausage":
-      this.cost += 10;
+    case "pepperoni":
+    case "sausage":
+      cost += 10;
       break;
-    case "Spicy Italian":
-    case "Miditerrian Veggie":
-      this.cost += 9;
+    case "spicy_talian":
+    case "miditerrian_veggie":
+      cost += 9;
       break;
-    case "Cheese Pizza":
-    case "Spinach Alfredo":
-      this.cost += 8;
-      break;
-  }
-  switch (this.pizzaSize) {
-    case "Small":
-      this.cost += 1;
-      break;
-    case "Medium":
-      this.cost += 3;
-      break;
-    case "Large":
-      this.cost += 5;
+    case "cheese_pizza":
+    case "spinach_alfredo":
+      cost += 8;
       break;
   }
-  //switch (this.toppings) {
-
-  //}
-
-  return this.cost;
+  switch (this.size) {
+    case "small":
+      cost += 1 + this.toppings.length * 0.5;
+      break;
+    case "medium":
+      cost += 3 + this.toppings.length * 1;
+      break;
+    case "large":
+      cost += 5 + this.toppings.length * 1.5;
+      break;
+  }
+  return cost;
 };
+
+//function CartItem(pizza, quantity){
+//  this.pizza = pizza;
+//  this.quantity = quantity;
+//}
+
+//CartItem.prototype.Cost = function() {
+//  return this.pizza.Cost() * quantity;
+//}
+
+ class CartItem {
+   constructor(pizza, quantity) {
+     this.pizza = pizza;
+     this.quantity = quantity;
+   }
+   Cost(){
+     return this.pizza.Cost() * quantity;
+   }
+ }
+
+
+function Cart() {
+  this.items = [];
+}
+
+Cart.prototype.Cost = function() {
+  return this.items.reduce(
+    function (total, item) {
+    return total + item.Cost();
+}
+
+  );
+}
+
+$(document).ready(function() {
+  $("#submit").click(function() {
+    var selectedPizza = $('input[type="checkbox"][name="pizza"]:checked').map(function() { return this.value; }).get();
+    var selectedToppings = $('input[type="checkbox"][name="toppings"]:checked').map(function() { return this.value; }).get();
+    var selectedSize = $('input[type="checkbox"][name="size"]:checked').map(function() { return this.value; }).get();
+    var selectedQuantity = parseInt($("input#quantity").val());
+    var name = $("input#name").val();
+
+    if(selectedPizza.length === 0 || selectedSize.length === 0) {
+      return;
+    }
+    var newPizza = new Pizza(selectedPizza[0], selectedSize[0], selectedToppings);
+
+    var cost = newPizza.Cost();
+
+//    $("#result").append("<h3>" + name + ", you've selected " + newPizza.pizzaName + ", " + newPizza.size + ", " + //newPizza.toppings + "." + "</h3>" + "<h3>" + "The cost is $ " + cost + "." + "</h3>");
+
+
+    $("#result").append(`<h3>${name}, you've selected ${newPizza.pizzaName} pizza, ${newPizza.size}, with ${newPizza.Toppings()}.</h3><h3>The cost is $${cost}.</h3>`);
+
+});
+
 
 });

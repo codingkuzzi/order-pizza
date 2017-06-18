@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-  <link href="css/styles.css" rel="stylesheet" type="text/css" />
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="js/scripts2.js"></script>
-  <title>Order Pizza</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/scripts2.js"></script>
+    <title>Order Pizza</title>
+  </head>
 
-<body>
-  <div class="jumbotron">
-    <h1>Welcome to Annie's Pizza!</h1>
-    </br>
-    <ul class="prices">
+  <body>
+    <div class="jumbotron">
+      <h1>Welcome to Annie's Pizza!</h1>
+      <br>
       <div class="row">
-        <div class="col-sm-4 pizza price">
-          <li id="small"> Pepperoni: Large $15.00 Medium $13.00 Small $11.00
+        <div class="col-sm-4">
+          <ul>
+            <li> Pepperoni: Large $15.00 Medium $13.00 Small $11.00</li>
+            <li> Sausage: Large $15.00 Medium $13.00 Small $11.00</li>
+            <li> Spicy Italian: Large $14.00 Medium $12.00 Small $10.00</li>
+          </ul>
         </div>
-        <div class="col-sm-5 pizza price">
-          <li id="small"> Miditerrian Veggie: Large $14.00 Medium $12.00 Small $10.00
+        <div class="col-sm-5">
+          <ul>
+            <li> Miditerrian Veggie: Large $14.00 Medium $12.00 Small $10.00</li>
+            <li> Cheese Pizza: Large $13.00 Medium $11.00 Small $9.00</li>
+            <li> Spinach Alfredo: Large $13.00 Medium $11.00 Small $9.00</li>
+          </ul>
         </div>
-        <div class="col-sm-3 topping price">
-          <span id="small-toppings">Additional toppings $ .50 each</span>
-          </li>
+        <div class="col-sm-3">
+          <ul>
+            <li>Additional toppings Large $ 1.50 each</li>
+            <li>Additional toppings Medium $ 1.00 each</li>
+            <li>Additional toppings Small $ .50 each</li>
+          </ul>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-4 pizza price">
-          <li id="medium"> Sausage: Large $15.00 Medium $13.00 Small $11.00
-        </div>
-        <div class="col-sm-5 pizza price">
-          <li id="medium"> Cheese Pizza: Large $13.00 Medium $11.00 Small $9.00
-        </div>
-        <div class="col-sm-3 topping price">
-          <span id="medium-toppings">Additional toppings $1.00 each</span>
-          </li>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 pizza price">
-          <li id="large"> Spicy Italian: Large $14.00 Medium $12.00 Small $10.00
-        </div>
-        <div class="col-sm-5 pizza price">
-          <li id="medium"> Spinach Alfredo: Large $13.00 Medium $11.00 Small $9.00
-        </div>
-        <div class="col-sm-3 topping price">
-          <span id="medium-toppings">Additional toppings $1.50 each</span>
-          </li>
-        </div>
-        </row>
-    </ul>
-  </div>
+    </div>
     <div class="container">
-      <form id="order">
-        <h3> Select Your Pizza!</h3>
-        <div class="row">
-          <div class="col-sm-3 pizzaName">
-            <input type="checkbox" value="pepperoni" checked> Pepperoni</input>
-            <br>
-            <input type="checkbox" value="sausage" checked> Sausage</input>
-            <br>
-            <input type="checkbox" value="spicy_italian" checked> Spicy Italian</input>
-            <br>
-            <input type="checkbox" value="miditerrian_veggie"> Miditerrian Veggie</input>
-            <br>
-            <input type="checkbox" value="cheese_pizza"> Cheese Pizza</input>
-            <br>
-            <input type="checkbox" value="spinach_alfredo"> Spinach Alfredo</input>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <h3> Select Your Pizza!</h3>
+          <div>
+            <input type="checkbox" name="pizza" value="pepperoni" />
+            <label>Pepperoni</label>
           </div>
+          <div>
+            <input type="checkbox" name="pizza" value="sausage" />
+            <label> Sausage</label>
+          </div>
+          <div>
+            <input type="checkbox" name="pizza" value="spicy_italian" />
+            <label> Spicy Italian</label>
+          </div>
+          <div>
+            <input type="checkbox" name="pizza" value="miditerrian_veggie" />
+            <label> Miditerrian Veggie</label>
+          </div>
+          <div>
+            <input type="checkbox" name="pizza" value="cheese_pizza" />
+            <label> Cheese Pizza</label>
+          </div>
+          <div>
+            <input type="checkbox" name="pizza" value="spinach_alfredo" />
+            <label> Spinach Alfredo</label>
+          </div>
+        </div>
+
+        <div class="col-sm-3 toppings">
           <h3>Select toppings </h3>
-          <div class="col-sm-3 "toppings">
-            <input type="checkbox" value="bell-pepper"> Mushrooms </input>
-            <br>
-            <input type="checkbox" value="mushroom"> Onions </input>
-            <br>
-            <input type="checkbox" value="onion"> Bacon </input>
-            <br>
-            <input type="checkbox" value="olive"> Black olives </input>
-            <br>
-            <input type="checkbox" value="pineapple"> Green peppers </input>
-            <br>
-            <input type="checkbox" value="pineapple"> Extra cheese </input>
+          <div>
+            <input type="checkbox" name="toppings" value="mushrooms" />
+            <label> Mushrooms</label>
           </div>
-          </row>
-          <div class="row">
-            <div class="col-sm-2 input" id="pizza-quantity">
-              <label for="quantity"> How Many: </label>
-              <br>
-              <input type="number" id="quantity" min="1" max="25" value=1 required>
-            </div>
-            <div class="col-sm-3 pizza-size">
-              <h3>Select a Size</h3>
-              <div class="col-sm-3 pizza-size">
-                <input type="checkbox" value="large"> Large </input>
-                <br>
-                <input type="checkbox" value="medium"> Medium </input>
-                <br>
-                <input type="checkbox" value="small"> Small </input>
-                <br>
-              </div>
-            </div>
-            <div class="col-sm-3 customer">
-              <label for="name"> Your name: </label>
-              <br>
-              <input type="text" id="name" required>
-            </div>
-            <br>
+          <div>
+            <input type="checkbox" name="toppings" value="onions" />
+            <label> Onions</label>
           </div>
-          <br>
-						<button type="submit" class="btn order btn-default"> Submit Your Order </button>
+          <div>
+            <input type="checkbox" name="toppings" value="bacon" />
+            <label> Bacon</label>
           </div>
+          <div>
+            <input type="checkbox" name="toppings" value="black_olives" />
+            <label> Black olives</label>
           </div>
-</body>
+          <div>
+            <input type="checkbox" name="toppings" value="green_peppers" />
+            <label> Green peppers</label>
+          </div>
+          <div>
+            <input type="checkbox" name="toppings" value="extra_cheese" />
+            <label> Extra cheese</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <h3>How Many:</h3>
+          <input type="number" id="quantity" value=1 required>
+        </div>
+        <div class=" col-sm-3 pizza-size ">
+          <h3>Select a Size</h3>
+          <div>
+            <input type="checkbox" name="size" value="large" />
+            <label> Large</label>
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="medium" />
+            <label> Medium</label>
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="small" />
+            <label> Small</label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-sm-5 customer ">
+          <label for="name"> Your name: </label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="col-sm-5 customer ">
+          <button type="button" class="btn order btn-default" id="submit"> Submit Your Order </button>
+        </div>
+      </div>
+
+      <div id="result">
+      </div>
+    </div>
+  </body>
 
 </html>
