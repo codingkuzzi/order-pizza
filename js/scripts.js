@@ -25,16 +25,16 @@ Pizza.prototype.Toppings = function() {
 Pizza.prototype.Cost = function() {
   var cost = 0;
   switch (this.pizzaName) {
-    case "pepperoni":
-    case "sausage":
+    case "Pepperoni":
+    case "Sausage":
       cost += 10;
       break;
-    case "spicy_talian":
-    case "miditerrian_veggie":
+    case "Spicy talian":
+    case "Miditerrian Veggie":
       cost += 9;
       break;
-    case "cheese_pizza":
-    case "spinach_alfredo":
+    case "Cheese Pizza":
+    case "Spinach Alfredo":
       cost += 8;
       break;
   }
